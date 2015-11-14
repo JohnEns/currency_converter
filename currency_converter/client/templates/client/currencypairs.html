@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="site-wrapper">
+
+        <h1>Wisselkoersen</h1>
+
+        <p>Huidige wisselkoersen</p>
+
+        <!-- Show each currency pair in a table with a link to create a history table for the currency pair -->
+        <table>
+            <tr>
+                <th> Valutapaar</th>
+                <th> Wisselkoers</th>
+            </tr>
+            {% for value in currency_pairs_values %}
+                <tr>
+                    <td>
+                        <a href="{% url "currencypairs" %}?id={{ value.currency_pair.id }}">
+                            {{ value.currency_pair.base_currency }} / {{ value.currency_pair.counter_currency }}
+                        </a>
+                    </td>
+                    <td>{{ value.currency_pair_rate }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <!-- End show currency pairs -->
+
+        <p>Klik op een van de valutaparen<br/> om de wisselkoers geschiedenis te bekijken.</p>
+
+        <!-- Show currency pair history after selecting a currency pair from the list -->
+        {% if historic_values %}
+            <h2>Valutakoersen voor {{ current_currency_pair.base_currency }}
+                / {{ current_currency_pair.counter_currency }}</h2>
+            <table>
+                <tr>
+                    <th> Date</th>
+                    <th> Rate</th>
+                </tr>
+
+                {% for value in historic_values %}
+                    <tr>
+                        <td>{{ value.date|date:"d-m-Y" }}</td>
+                        <td>{{ value.currency_pair_rate }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+        <!-- End show currency pair history -->
+    </div>
+{% endblock %}

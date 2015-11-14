@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from client import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^currencyconverter/', views.currency_converter, name='currencyconverter'),
+    url(r'^currencypairs', views.currency_rates, name='currencypairs'),
     url(r'^admin/', admin.site.urls),
+
 ]

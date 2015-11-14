@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="site-wrapper">
+        <!-- Login, logout and register messages -->
+        <p>{{ message }}</p>
+
+        <!-- Login form -->
+        <h1>Inloggen</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ login_form.non_field_errors }}
+            <div>
+                <div class="wrapper-left">
+                    <label>Gebruikersnaam</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ login_form.username }}
+                    {{ login_form.username.errors }}
+                </div>
+            </div>
+            <div>
+                <div class="wrapper-left">
+                    <label>Wachtwoord</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ login_form.password }}
+                    {{ login_form.password.errors }}
+                </div>
+            </div>
+            <input class="submit-button" type="submit" value="Inloggen" name="login">
+        </form>
+        <!-- End login form -->
+
+        <!-- Logout button -->
+        <h1>Uitloggen</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <input class="submit-button" type="submit" value="Uitloggen" name="logout">
+        </form>
+        <!-- End logout button -->
+
+        <!-- Registration form -->
+        <h1>Registreren</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ registration_form.non_field_errors }}
+            <div>
+                <div class="wrapper-left">
+                    <label>Gebruikersnaam</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ registration_form.username }}
+                    {{ registration_form.username.errors }}
+                </div>
+            </div>
+            <div>
+                <div class="wrapper-left">
+                    <label>Email</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ registration_form.email }}
+                    {{ registration_form.email.errors }}
+                </div>
+            </div>
+            <div>
+                <div class="wrapper-left">
+                    <label>Wachtwoord</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ registration_form.password }}
+                    {{ registration_form.password.errors }}
+                </div>
+            </div>
+            <div>
+                <div class="wrapper-left">
+                    <label>Wachtwoord nogmaals</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ registration_form.password2 }}
+                    {{ registration_form.password2.errors }}
+                </div>
+            </div>
+            <input class="submit-button" type="submit" value="Registreren" name="register">
+        </form>
+        <!-- End registration form -->
+    </div>
+{% endblock %}

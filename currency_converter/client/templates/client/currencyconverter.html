@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="site-wrapper">
+
+        <h1>Wisselkoers Calculator</h1>
+        <!-- Currency field calculator form -->
+        <form action="" method="get">
+            {{ form.non_field_errors }}
+
+            <!-- Base currency -->
+            <div>
+                <div class="wrapper-left">
+                    <label>Van valuta</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ form.base_currency }}
+                </div>
+            </div>
+            {% if form.base_currency.errors %}
+                <div>
+                    <div class="wrapper-left">
+                        <label>Fout:</label>
+                    </div>
+                    <div class="wrapper-right">
+                        <div class="field-error">{{ form.base_currency.errors }}</div>
+                    </div>
+                </div>
+            {% endif %}
+            <!-- End base currency -->
+
+            <!-- Counter currency -->
+            <div>
+                <div class="wrapper-left">
+                    <label for="{{ form.counter_currency.id_for_label }}">Naar valuta</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ form.counter_currency }}
+                </div>
+
+            </div>
+            {% if form.counter_currency.errors %}
+                <div>
+                    <div class="wrapper-left">
+                        <label>Fout:</label>
+                    </div>
+                    <div class="wrapper-right">
+                        <div class="field-error">{{ form.counter_currency.errors }}</div>
+                    </div>
+                </div>
+            {% endif %}
+            <!-- End counter currency -->
+
+            <!-- Base amount input field -->
+            <div>
+                <div class="wrapper-left">
+                    <label for="{{ form.base_amount.id_for_label }}">Bedrag</label>
+                </div>
+                <div class="wrapper-right">
+                    {{ form.base_amount }}
+                </div>
+            </div>
+            {% if form.base_amount.errors %}
+                <div>
+                    <div class="wrapper-left">
+                        <label>Fout:</label>
+                    </div>
+                    <div class="wrapper-right">
+                        <div class="field-error">{{ form.base_amount.errors }}</div>
+                    </div>
+                </div>
+            {% endif %}
+            <input class="submit-button" type="submit" value=" Bereken wisselkoers">
+        </form>
+        <!-- End base amount input field -->
+        <!-- End currency field calculator form -->
+
+        <!-- Show the result to the screen when it is calculated -->
+        {% if counter_amount %}
+            <div>
+                <div class="wrapper-left">
+                    <p>Resultaat:</p>
+                </div>
+                <div class="wrapper-right">
+                    <p>{{ counter_amount }}</p>
+                </div>
+            </div>
+        {% endif %}
+        <!-- End show result -->
+    </div>
+{% endblock %}
