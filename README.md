@@ -39,7 +39,7 @@ To run the project you first need to install:
 Clone the project from github  
 ```$ git clone https://github.com/johanvergeer/currency_converter.git```  
 
-## Replace the bin directory
+### Replace the bin directory
 Just to be sure all the dependencies and binaries are correct you should replace the bin directory
 1. create a new virtualenv outside the project root directory  
 ```$ virtualenv -p /usr/bin/python3.4 venv```  
@@ -63,7 +63,7 @@ ex. ```127.0.0.1:8000```
 One you have created a user you can login and use the application. 
 The user information is stored in the database. 
 
-##Login to admin panel
+###Login to admin panel
 1. create a superuser from the terminal  
 ```python manage.py createsuperuser --username=joe --email=joe@example.com```
 2. open the admin panel in the web browser  
