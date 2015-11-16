@@ -3,8 +3,10 @@ Django currency converter website
 ##SOAP servers
 This application makes use of 2 SOAP servers:  
 ###Kowabunga  
+```$ http://currencyconverter.kowabunga.net/converter.asmx?WSDL```  
 Good API with several possibilities. The values that get returned are not always trustworthy. 
 ###Webservicex
+```$ http://www.webservicex.net/currencyconvertor.asmx?WSDL```  
 This SOAP server only provides a conversion rate between 2 currencies.  
 Webservicex is used as a backup in case Kowabunga does not return a value.  
 ##Database
@@ -22,7 +24,7 @@ Git and pip should also be installed.
 ### Install Git  
 ```sudo apt-get update```  
 ```sudo apt-get install git```  
-```git config --global user.name "YOUR NAME"```
+```git config --global user.name "YOUR NAME"```  
 ```git config --global user.email "YOUR EMAIL ADDRESS"```
 ### Install pip 
 ```sudo apt-get install python-pip```  
@@ -44,7 +46,7 @@ Clone the project from github
 ```source bin/activate```
 3. Move into Django root folder:  
 ```cd currency_converter```
-4. Run Django server:
+4. Run Django server:  
 ```python manage.py runserver```
 5. You can open the application from your webbrowser using the ip address.  
 ex. ```127.0.0.1:8000```
