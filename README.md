@@ -54,3 +54,9 @@ ex. ```127.0.0.1:8000```
 ##Login and use the application
 One you have created a user you can login and use the application. 
 The user information is stored in the database. 
+
+##Login to admin panel
+1. create a superuser from the terminal  
+```python manage.py createsuperuser --username=joe --email=joe@example.com```
+2. open the admin panel in the web browser  
+ex. ```127.0.0.1:8000/admin```
