@@ -42,12 +42,11 @@ Clone the project from github
 ## Replace the bin directory
 Just to be sure all the dependencies and binaries are correct you should replace the bin directory
 1. create a new virtualenv outside the project root directory  
-```virtualenv -p /usr/bin/python3.4 venv```  
+```$ virtualenv -p /usr/bin/python3.4 venv```  
 2. remove the bin directory from the project root directory  
 3. move the bin directory from venv directory to the project root directory  
-4. Change virtualenv path  inside bin/activate
-```VIRTUAL_ENV="/home/username/directory/to/virtualenv"```  
-
+4. Change virtualenv path  inside bin/activate  
+```$ VIRTUAL_ENV="/home/username/directory/to/virtualenv"```  
 ## Run the application
 1. Move into the application root folder:  
 ```cd currency_converter```  
